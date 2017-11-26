@@ -15,8 +15,8 @@ namespace kalkulator
     public partial class Form1 : Form
     {
         string dzialanie;
-        int liczba = 0;
-        int liczba2 = 0;
+        double liczba = 0;
+        double liczba2 = 0;
         double wynik = 0;
 
         public Form1()
@@ -46,20 +46,23 @@ namespace kalkulator
                     textBox1.Text = Convert.ToString(wynik);
                     // label1.Text = Convert.ToString(wynik);
                     //wynik = liczba2;
+                    liczba = wynik;
+
                     break;
 
                 case ("-"):
                     wynik = wynik - liczba;
                     textBox1.Text = "";
                     textBox1.Text = Convert.ToString(wynik);
-                    wynik = liczba2;
+                    liczba = wynik;
                     break;
 
                 case ("*"):
                     wynik = wynik * liczba;
                     textBox1.Text = "";
                     textBox1.Text = Convert.ToString(wynik);
-                    wynik = liczba2;
+                    //wynik = liczba2;
+                    liczba = wynik;
                     break;
 
                 case ("/"):
@@ -69,7 +72,7 @@ namespace kalkulator
                         wynik = wynik / liczba;
                         textBox1.Text = "";
                         textBox1.Text = Convert.ToString(wynik);
-                        wynik = liczba2;
+                        liczba = wynik;
                     }
                     else  textBox1.Text = "Nie można dzielić przez 0";
                     break;
